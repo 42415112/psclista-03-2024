@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class MaiorMenorMedia {
+
+    public static void main(String[] args) {
+        // Criar um objeto Scanner para leitura de dados
+        Scanner entrada = new Scanner(System.in);
+
+        // Ler os 3 números
+        System.out.println("Digite o primeiro número:");
+        int numero1 = entrada.nextInt();
+
+        System.out.println("Digite o segundo número:");
+        int numero2 = entrada.nextInt();
+
+        System.out.println("Digite o terceiro número:");
+        int numero3 = entrada.nextInt();
+
+        // Variáveis para armazenar o maior, menor e a soma dos números
+        int maior = numero1;
+        int menor = numero1;
+        int soma = numero1;
+
+        // Encontrar o maior e menor número
+        if (numero2 > maior) {
+            maior = numero2;
+        } else if (numero2 < menor) {
+            menor = numero2;
+        }
+
+        if (numero3 > maior) {
+            maior = numero3;
+        } else if (numero3 < menor) {
+            menor = numero3;
+        }
+
+        // Calcular a soma dos 3 números
+        soma += numero2;
+        soma += numero3;
+
+        // Calcular a média aritmética
+        double media = (double) soma / 3;
+
+        // Apresentar os resultados
+        System.out.println("\nMaior número: " + maior);
+        System.out.println("Menor número: " + menor);
+        System.out.printf("Média aritmética: %.2f", media);
+    }
+}
