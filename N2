@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class MaquinaVendaAutomatica {
+
+    public static void main(String[] args) {
+        // Criar um objeto Scanner para leitura de dados
+        Scanner entrada = new Scanner(System.in);
+
+        // Variáveis para armazenar valores
+        double valorCompra;
+        double valorPago;
+        double troco = 0.0;
+
+        // Ler o valor da compra
+        System.out.println("Digite o valor da compra: ");
+        valorCompra = entrada.nextDouble();
+
+        // Ler o valor pago
+        System.out.println("Digite o valor pago: ");
+        valorPago = entrada.nextDouble();
+
+        // Verificar se o valor pago é suficiente
+        if (valorPago < valorCompra) {
+            System.out.println("Valor insuficiente para realizar a compra!");
+            return;
+        }
+
+        // Calcular o troco
+        troco = valorPago - valorCompra;
+
+        // Calcular o número de notas de R$ 50
+        int notas50 = (int) (troco / 50.0);
+        troco %= 50.0;
+
+        // Calcular o número de notas de R$ 20
+        int notas20 = (int) (troco / 20.0);
+        troco %= 20.0;
+
+        // Calcular o número de notas de R$ 10
+        int notas10 = (int) (troco / 10.0);
+        troco %= 10.0;
+
+        // Calcular o número de notas de R$ 5
+        int notas5 = (int) (troco / 5.0);
+        troco %= 5.0;
+
+        // Calcular o número de notas de R$ 2
+        int notas2 = (int) (troco / 2.0);
+        troco %= 2.0;
+
+        // Calcular o número de moedas de R$ 1
+        int moedas1 = (int) troco;
+
+        // Apresentar o troco
+        System.out.println("\n*Troco:*");
+        System.out.println("Notas de R$ 50: " + notas50);
+        System.out.println("Notas de R$ 20: " + notas20);
+        System.out.println("Notas de R$ 10: " + notas10);
+        System.out.println("Notas de R$ 5: " + notas5);
+        System.out.println("Notas de R$ 2: " + notas2);
+        System.out.println("Moedas de R$ 1: " + moedas1);
+    }
+}
