@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class MedidasCirculoEsfera {
+
+    public static void main(String[] args) {
+        // Cria scanner para leitura de dados
+        Scanner scanner = new Scanner(System.in);
+
+        // Lê código da operação e raio
+        System.out.println("Digite o código da operação (1, 2 ou 3): ");
+        int codigoOperacao = scanner.nextInt();
+        System.out.println("Digite o valor do raio: ");
+        double raio = scanner.nextDouble();
+
+        // Calcula e imprime a medida de acordo com o código da operação
+        switch (codigoOperacao) {
+            case 1:
+                double perimetro = 2 * Math.PI * raio;
+                System.out.printf("Perímetro do círculo: %.2f\n", perimetro);
+                break;
+            case 2:
+                double area = Math.PI * Math.pow(raio, 2);
+                System.out.printf("Área do círculo: %.2f\n", area);
+                break;
+            case 3:
+                double volume = (4.0 / 3.0) * Math.PI * Math.pow(raio, 3);
+                System.out.printf("Volume da esfera: %.2f\n", volume);
+                break;
+            default:
+                System.out.println("Código da operação inválido.");
+        }
+    }
+}
